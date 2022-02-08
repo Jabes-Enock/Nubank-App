@@ -24,6 +24,7 @@
 <script lang="ts">
 
 import { defineComponent} from 'vue'
+import axios from '@/utils/axios'
 
 export default defineComponent({
   data() {
