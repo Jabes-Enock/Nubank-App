@@ -9,42 +9,61 @@
         </div>
         <div class="campo-dados">
           <h2>Faça seu login</h2>
-          <form class="campo-dados-inputs">
-                <input type="text" placeholder="CPF">
-                <input type="password" placeholder="Senha" >
-                <button class="button-continuar">Continuar</button>
+          <form class="campo-dados-inputs" @submit.prevent="verifiqueUser">
+                <input v-model="form.CPF" type="text" placeholder="CPF">
+                <input v-model="form.senha" type="password" placeholder="Senha" >
+                <button class="button-continuar" type="submit">Continuar</button>
           </form>
         </div>
       </div>
+      <div v-else>
+        <router-link to='/'></router-link>
+        <router-view />
+      </div>
 
-        
   </div>
 </template>
 
 <script lang="ts">
 
 import { defineComponent} from 'vue'
-import axios from '@/utils/axios'
+import axios from './Utils/axios'
 
 export default defineComponent({
   data() {
     return {
-      login: true
+      login: true,
+      form: {
+        CPF: '',
+        senha: ''
+      }
+    }
+  }, 
+
+  methods: {
+    async verifiqueUser () {
+      try {
+        const  { data }  = await axios.post('/users', this.form)
+        console.log(data)
+
+        this.form.CPF = ''
+        this.form.senha = ''
+
+        if(data == 'Usuário autorizado') {
+          this.login = false
+        }
+
+      } catch (error) {
+        console.warn(error)
+      }
+      
     }
   }
 })
 
 </script>
 
-<style>
-
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-}
+<style scoped>
 
 .container {
   max-width: 100vw;
