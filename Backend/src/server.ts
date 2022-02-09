@@ -16,15 +16,8 @@ interface UserData {
 const users: UserData[] = []
 
 app.get('/users', (request, response) => {
-    const { CPF, senha} = request.body
-
-    const userIndex = users.findIndex( user => user.CPF === CPF && user.senha === senha)
-
-    if(userIndex < 0) {
-        return response.json([users])
-    }
-
-    return response.json(['Usuário autorizado'])
+    
+    return response.json(users)
 
 })
 
@@ -41,7 +34,7 @@ app.post('/users', (request, response) => {
 })
 
 
-app.post('/cadastro', (request, response) => {
+app.post('/cadastrar', (request, response) => {
     const {CPF, senha} = request.body
 
     const user = { id: uuid(), CPF, senha }

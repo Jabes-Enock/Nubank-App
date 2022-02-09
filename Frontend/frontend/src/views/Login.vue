@@ -27,6 +27,7 @@ import { defineComponent} from 'vue'
 import axios from '../Utils/axios'
 
 export default defineComponent({
+  name: 'Login',
   data() {
     return {
       login: true,
@@ -41,13 +42,13 @@ export default defineComponent({
     async verifiqueUser () {
       try {
         const  { data }  = await axios.post('/users', this.form)
-        
-
+      
         this.form.CPF = ''
         this.form.senha = ''
 
         if(data == 'Usuário autorizado') {
-          this.$router.push({ name: "Home"})
+          this.$router.push('/')
+          console.log(data)
           
         }
 
@@ -89,7 +90,7 @@ export default defineComponent({
 }
 
 .campo-dados {
-  width: 100%;
+  width: 80%;
   max-width: 400px;
   background: white;
   height: 100vh;
