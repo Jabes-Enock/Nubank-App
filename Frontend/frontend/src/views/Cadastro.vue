@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <div class="login">
+      <div class="cadastro">
         <div class="logo-nubank">
             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="50" viewBox="0 0 58 32">
                 <path fill="#ffffff" d="M10.4699 3.05246C12.304 1.12557 14.7369 0 17.5951 0C23.1632 0 26.8549 4.06542 27.5612 10.1557C27.7902 12.1335 27.7881 14.9219 27.7858 18.1516C27.7855 18.4828 27.7853 18.8187 27.7853 19.1588V31.2578H20.1281V22.309C20.1281 22.309 20.1125 14.6501 20.0657 13.2187C19.8602 6.98449 16.1695 3.06722 10.4691 3.06301C8.74925 4.88006 7.82773 7.10172 7.69183 10.4987C7.67315 10.9725 7.67785 12.6519 7.68404 14.8653C7.68725 16.0121 7.69086 17.3023 7.69183 18.6424C7.6975 24.4753 7.69183 31.2591 7.69183 31.2591H0.0346685V17.487C0.0346685 17.0151 0.0260685 16.5392 0.0174352 16.0614C6.75514e-05 15.1003 -0.0174352 14.1318 0.0346685 13.1728C0.121182 11.5741 0.397742 10.0025 1.14374 8.54252C2.85132 5.1978 6.35016 3.04426 10.0802 3.04426C10.2105 3.04426 10.3409 3.047 10.4699 3.05246Z"/>
@@ -8,11 +8,16 @@
             </svg>
         </div>
         <div class="campo-dados">
-          <h2>Faça seu login</h2>
-          <form class="campo-dados-inputs" @submit.prevent="verifiqueUser">
+          <h2>Faça seu cadastro</h2>
+          <form class="campo-dados-inputs" @submit.prevent="registerUser">
+                <input v-model="form.firstName" type="text" placeholder="Nome">
+                <input v-model="form.SecondName" type="text" placeholder="Sobrenome" >
                 <input v-model="form.CPF" type="text" placeholder="CPF">
+                <input v-model="form.email" type="text" placeholder="Email" >
                 <input v-model="form.senha" type="password" placeholder="Senha" >
-                <button class="button-continuar" type="submit">Continuar</button>
+
+
+                <button class="button-cadastrar" type="submit">Continuar</button>
           </form>
         </div>
       </div>
@@ -21,62 +26,49 @@
   
 </template>
 
-<script lang="ts">
 
+<script lang="ts">
 import { defineComponent} from 'vue'
 import axios from '../Utils/axios'
 
 export default defineComponent({
-  name: 'Login',
-  data() {
+  name: 'Cadastro',
+  data(){
     return {
-      login: true,
       form: {
+        firstName: '',
+        SecondName: '',
         CPF: '',
+        email: '',
         senha: ''
+        
       }
     }
-  }, 
+  },
 
   methods: {
-    async verifiqueUser () {
-      try {
-        const  { data }  = await axios.post('/users', this.form)
-      
-        this.form.CPF = ''
-        this.form.senha = ''
-
-        if(data == 'Usuário autorizado') {
-          this.$router.push('/')
-          console.log(data)
-          
-        }
-
-      } catch (error) {
-        console.warn(error)
-      }
-      
+    async registerUser(){
+      await axios.post('/cadastro', this.form)
     }
   }
-})
 
+
+})
 </script>
 
 <style scoped>
-
 .container {
   max-width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: rgb(132, 9, 204);
   display: grid;
   place-items: center;
+  padding-bottom: 4rem;
 }
 
-.login {
+.cadastro {
   width: 100%;
   max-width: 700px;
-  height: 100vh;
-  max-height: 500px;
   margin:auto;
   text-align: center;
   display: flex;
@@ -93,8 +85,7 @@ export default defineComponent({
   width: 80%;
   max-width: 400px;
   background: white;
-  height: 100vh;
-  max-height: 600px;
+  min-height: 100vh;
   padding: 40px 20px 20px;
   margin: auto;
   border-radius: 10px;
@@ -129,22 +120,21 @@ export default defineComponent({
   font-size: 1rem;
 }
 
-
-
-.campo-dados-inputs .button-continuar {
+.campo-dados-inputs .button-cadastrar {
   border: 1px solid rgb(86, 86, 86, 0.3);
   outline: none;
-  padding: 1.5rem 10px;
+  padding: 1rem 10px;
   margin-top: 2rem;
   border-radius: 5px;
-  background: rgba(212, 212, 212, 0.3) ;
+  background: var(--color-primary);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  color: var(--color-second)
 }
 
-.campo-dados-inputs .button-continuar:hover {
-  background: rgba(212, 212, 212, 0.7);
+.campo-dados-inputs .button-cadastrar:hover {
+  opacity: 0.9;
 }
 
 </style>
