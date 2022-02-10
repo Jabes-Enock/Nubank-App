@@ -15,8 +15,6 @@
                 <input v-model="form.CPF" type="text" placeholder="CPF">
                 <input v-model="form.email" type="text" placeholder="Email" >
                 <input v-model="form.senha" type="password" placeholder="Senha" >
-
-
                 <button class="button-cadastrar" type="submit">Continuar</button>
           </form>
         </div>

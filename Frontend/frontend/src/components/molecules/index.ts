@@ -1,0 +1,1 @@
+export { default as LoginData } from './LoginData.vue'

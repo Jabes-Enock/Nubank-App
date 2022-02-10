@@ -1,17 +1,18 @@
 <template>
-    <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+    <div>
+        <LoginCardDone />
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { LoginCardDone } from '../components/template'
 
 export default defineComponent({
-    name: 'Navbar'
+   components: {
+       LoginCardDone
+   }
 })
-
 </script>
 
 <style scoped>
