@@ -43,7 +43,7 @@ export default defineComponent({
   border-radius: 5px;
   background: rgba(212, 212, 212, 0.3) ;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 

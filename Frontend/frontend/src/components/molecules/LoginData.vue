@@ -5,18 +5,24 @@
         <InputItem type="text" placeholderData="Senha" />
 
         <ButtonStyled text="Entrar" bgColor="primary-color" textColor="white"/>
+        <div class="login-data-link-to-cadastro">
+           <LinkStyled  to="/cadastro" textColor="purple" text="Cadastrar Usuário"/> 
+        </div>
+        
+        
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { InputItem, ButtonStyled } from '../atoms'
+import { InputItem, ButtonStyled, LinkStyled } from '../atoms'
 
 
 export default defineComponent({
     components: {
         InputItem,
-        ButtonStyled
+        ButtonStyled,
+        LinkStyled
     }
 })
 </script>
@@ -28,7 +34,21 @@ export default defineComponent({
     flex-direction: column;
 }
 
-.login-data h1 {
+.login-data h1
+ {
     text-align: center;
+}
+
+.login-data-link-to-cadastro {
+    text-align: center;
+    margin: 2rem;
+}
+
+.login-data-link-to-cadastro .link-styled {
+    font-size: 1rem;
+}
+
+.login-data-link-to-cadastro .link-styled:hover {
+    color: black;
 }
 </style>

@@ -26,7 +26,7 @@ export default defineComponent({
 
 <style scoped>
 .login-data {
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     
 }
