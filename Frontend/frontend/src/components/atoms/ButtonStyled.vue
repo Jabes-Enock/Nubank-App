@@ -1,5 +1,5 @@
 <template>
-    <button :class="['button-styled', bgColor, textColor]">
+    <button :class="['button-styled', bgColor, textColor]" :type="typeText">
         {{text}}
     </button>
 </template>
@@ -15,6 +15,10 @@ export default defineComponent({
         text: {
             type: String,
             required: true,
+        },
+        typeText: {
+            type: String,
+            default: 'submit'
         },
         bgColor: {
             type: String,
@@ -38,13 +42,14 @@ export default defineComponent({
 .button-styled {
   border: 1px solid rgb(86, 86, 86, 0.3);
   outline: none;
-  padding: 1.5rem 10px;
+  padding: 1rem 10px;
   margin-top: 2rem;
   border-radius: 5px;
   background: rgba(212, 212, 212, 0.3) ;
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: bold;
+  width: 100%;
 }
 
 .button-styled:hover {

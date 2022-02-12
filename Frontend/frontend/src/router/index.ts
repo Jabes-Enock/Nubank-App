@@ -3,7 +3,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Login from '../views/Login.vue'
 import Cadastro from '../views/Cadastro.vue'
-import TestComponents from '../views/TestComponents.vue'
+
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     component: About,
   },
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     component: Login,
   },
@@ -25,12 +25,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/cadastro',
     name: 'Cadastro',
     component: Cadastro,
-  },
-  {
-    path: '/',
-    name: 'TestComponents',
-    component: TestComponents,
-  },
+  }
 ];
 
 const router = createRouter({

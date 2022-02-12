@@ -1,10 +1,10 @@
 <template>
-    <div class="login-data">
-        <div class="login-data-logo-nubank">
+    <div class="cadastro-data">
+        <div class="cadastro-data-logo-nubank">
           <Logo />  
         </div>
-        <div class="login-data-inputs">
-            <LoginData />
+        <div class="cadastro-data-inputs">
+            <CadastroData />
         </div>
         
     </div>
@@ -12,32 +12,34 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { LoginData } from '../molecules'
+import { CadastroData } from '../molecules'
 import { Logo } from '../atoms'
 
 
 export default defineComponent({
     components: {
-        LoginData,
-        Logo
+        Logo,
+        CadastroData
     }
 })
 </script>
 
 <style scoped>
-.login-data {
-    width: 90%;
+.cadastro-data {
+    width: 100%;
     max-width: 400px;
 }
 
-.login-data-logo-nubank {
+.cadastro-data-logo-nubank {
     max-width: 120px;
-    margin: 2rem auto;
+    margin: 3rem auto;
 }
 
-.login-data-inputs {
+.cadastro-data-inputs {
+    width: 100%;
     background: var(--color-second);
     padding: 1rem;
     border-radius: 0.7rem;
+    margin: auto;
 }
 </style>

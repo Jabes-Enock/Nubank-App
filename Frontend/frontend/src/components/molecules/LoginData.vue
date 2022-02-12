@@ -1,15 +1,14 @@
 <template>
     <div class="login-data">
         <h1>Faça seu login</h1>
-        <InputItem type="number" placeholderData="CPF" />
-        <InputItem type="text" placeholderData="Senha" />
-
-        <ButtonStyled text="Entrar" bgColor="primary-color" textColor="white"/>
-        <div class="login-data-link-to-cadastro">
-           <LinkStyled  to="/cadastro" textColor="purple" text="Cadastrar Usuário"/> 
-        </div>
-        
-        
+        <form class="login-data-form">
+            <InputItem type="number" placeholderData="CPF" />
+            <InputItem type="password" placeholderData="Senha" />
+            <ButtonStyled text="Entrar" bgColor="primary-color" textColor="white"/>
+            <div class="login-data-link-to-cadastro">
+                <LinkStyled  to="/cadastro" textColor="purple" text="Cadastrar Usuário"/> 
+            </div>
+        </form>
     </div>
 </template>
 
@@ -30,12 +29,19 @@ export default defineComponent({
 <style scoped>
 .login-data {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    place-items: center;
+    padding: 0 1rem;
 }
 
 .login-data h1
  {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cadastro-data-form {
+    width: 50%;
     text-align: center;
 }
 
@@ -46,9 +52,13 @@ export default defineComponent({
 
 .login-data-link-to-cadastro .link-styled {
     font-size: 1rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--color-primary);
+    padding: 2px 5px;
 }
 
 .login-data-link-to-cadastro .link-styled:hover {
     color: black;
+    border-bottom: 1px solid black;
 }
 </style>
