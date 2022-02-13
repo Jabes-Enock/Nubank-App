@@ -1,5 +1,9 @@
 <template>
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <transition>
+    <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script lang="ts">
@@ -12,6 +16,14 @@ export default defineComponent({
 
 </script>
 
-<style>
+<style scoped>
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.25s ease;
+}
 </style>

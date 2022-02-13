@@ -21,6 +21,7 @@ export default defineComponent({
 
 <style scoped>
 .input-item {
+  width: 100%;
   border: none;
   border-bottom: 1px solid rgb(86, 86, 86, 0.3);
   outline: none;

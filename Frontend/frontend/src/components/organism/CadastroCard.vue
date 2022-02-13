@@ -6,7 +6,6 @@
         <div class="cadastro-data-inputs">
             <CadastroData />
         </div>
-        
     </div>
 </template>
 
@@ -38,8 +37,15 @@ export default defineComponent({
 .cadastro-data-inputs {
     width: 100%;
     background: var(--color-second);
-    padding: 1rem;
-    border-radius: 0.7rem;
+    padding: 4rem 0;
+    border-top-left-radius: 10rem;
     margin: auto;
 }
+
+@media only screen and (min-width: 700px) {
+    .cadastro-data-inputs {
+        border-radius: 0.7rem;
+    }
+}
+
 </style>

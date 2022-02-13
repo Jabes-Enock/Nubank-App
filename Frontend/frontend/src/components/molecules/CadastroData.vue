@@ -2,11 +2,11 @@
     <div class="cadastro-data">
         <h1>Faça seu Cadastro</h1>
         <form class="cadastro-data-form">
-            <InputItem type="text" placeholderData="Nome" />
-            <InputItem type="text" placeholderData="Sobrenome" />
-            <InputItem type="number" placeholderData="CPF" />
-            <InputItem type="text" placeholderData="E-mail" />
-            <InputItem type="password" placeholderData="Senha" />
+            <InputItem textType="text" placeholderData="Nome" />
+            <InputItem textType="text" placeholderData="Sobrenome" />
+            <InputItem textType="number" placeholderData="CPF" />
+            <InputItem textType="text" placeholderData="E-mail" />
+            <InputItem textType="password" placeholderData="Senha" />
 
             <ButtonStyled text="Cadastrar" bgColor="primary-color" textColor="white"/>
             
@@ -33,6 +33,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding: 1rem;
 }
 
 .cadastro-data h1

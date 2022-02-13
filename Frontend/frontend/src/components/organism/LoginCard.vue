@@ -26,7 +26,7 @@ export default defineComponent({
 
 <style scoped>
 .login-data {
-    width: 90%;
+    width: 100%;
     max-width: 400px;
 }
 
@@ -36,8 +36,15 @@ export default defineComponent({
 }
 
 .login-data-inputs {
+    max-width: 100%;
     background: var(--color-second);
-    padding: 1rem;
-    border-radius: 0.7rem;
+    border-top-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+}
+
+@media only screen and (min-width: 700px) {
+    .login-data-inputs {
+        border-radius: 0.7rem;
+    }
 }
 </style>
