@@ -40,6 +40,7 @@ export default defineComponent({
  {
     text-align: center;
     margin-bottom: 3rem;
+    font-weight: lighter;
 }
 
 .cadastro-data-form {

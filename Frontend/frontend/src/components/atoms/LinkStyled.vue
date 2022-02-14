@@ -31,6 +31,7 @@ export default defineComponent({
 <style scoped>
 .link-styled {
    width: 100%;
+   padding: 1rem 0;
 }
 
 .black {

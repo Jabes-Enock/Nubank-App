@@ -17,6 +17,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+
+@media only screen and (max-width: 500px){
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
@@ -25,5 +28,6 @@ export default defineComponent({
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.25s ease;
+}
 }
 </style>

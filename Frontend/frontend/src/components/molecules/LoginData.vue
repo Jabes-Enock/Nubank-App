@@ -3,7 +3,7 @@
         <h1>Faça seu login</h1>
         <form class="login-data-form">
             <InputItem textType="number" placeholderData="CPF" />
-            <InputItem textType="password" placeholderData="Senha" />
+            <InputItem textType="password" placeholderData="Senha"/>
             <ButtonStyled text="Entrar" bgColor="primary-color" textColor="white"/>
             <div class="login-data-link-to-cadastro">
                 <LinkStyled  path="/cadastro" textColor="purple" text="Cadastrar Usuário"/>
@@ -22,7 +22,8 @@ export default defineComponent({
         InputItem,
         ButtonStyled,
         LinkStyled
-    }
+    },
+
 })
 </script>
 
@@ -38,6 +39,7 @@ export default defineComponent({
  {
     text-align: center;
     margin-bottom: 3rem;
+    font-weight: lighter;
 }
 
 .login-data-form {
