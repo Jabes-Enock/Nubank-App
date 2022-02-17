@@ -2,13 +2,13 @@
     <div class="cadastro-data">
         <h1>Faça seu Cadastro</h1>
         <form class="cadastro-data-form">
-            <InputItem textType="text" placeholderData="Nome" />
-            <InputItem textType="text" placeholderData="Sobrenome" />
-            <InputItem textType="number" placeholderData="CPF" />
-            <InputItem textType="text" placeholderData="E-mail" />
-            <InputItem textType="password" placeholderData="Senha" />
+            <input v-model="form.nome" class="cadastro-data-form-input" type="text" placeholder="Digite seu nome">
+            <input v-model="form.sobrenome" class="cadastro-data-form-input" type="text" placeholder="Digite seu sobrenome">
+            <input v-model="form.CPF" class="cadastro-data-form-input" type="number" placeholder="CPF: xxxxxxxxxxx">
+            <input v-model="form.email" class="cadastro-data-form-input" type="text" placeholder="Email: fulanodetal@email.com">
+            <input v-model="form.senha" class="cadastro-data-form-input" type="password" placeholder="Senha: **********">
 
-            <ButtonStyled text="Cadastrar" bgColor="primary-color" textColor="white"/>
+            <ButtonStyled @click="registerUser" text="Cadastrar" bgColor="primary-color" textColor="white"/>
             
         </form>
     </div>
@@ -16,13 +16,30 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { InputItem, ButtonStyled} from '../atoms'
-
+import { ButtonStyled} from '../atoms'
+import axios from '../../Utils/axios'
 
 export default defineComponent({
+
+    data(){
+        return {
+            form: {
+                nome:'',
+                sobrenome:'',
+                CPF:'',
+                email:'',
+                senha: ''
+            }
+        }
+    },
     components: {
-        InputItem,
         ButtonStyled
+    },
+
+    methods: {
+        async registerUser() {
+           await axios.post('/cadastrar', this.form)
+        },
     }
 })
 </script>
@@ -46,6 +63,21 @@ export default defineComponent({
 .cadastro-data-form {
     width: 100%;
     text-align: center;
+}
+
+.cadastro-data-form-input {
+    width: 100%;
+    border: 1px solid var(--bg-gray);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.cadastro-data-form-input:focus {
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 5px 0 var(--color-primary) ;
 }
 
 

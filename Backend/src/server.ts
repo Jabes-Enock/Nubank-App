@@ -9,7 +9,10 @@ app.use(cors())
 
 interface UserData {
     id: string
-    CPF: string
+    nome: string
+    sobrenome: string
+    CPF: number
+    email: string
     senha: string
 }
 
@@ -23,21 +26,20 @@ app.get('/users', (request, response) => {
 
 app.post('/users', (request, response) => {
     const { CPF, senha} = request.body
-
     const userIndex = users.findIndex( user => user.CPF === CPF && user.senha === senha)
 
     if(userIndex < 0) {
         return response.json(['Usuário não encontrado'])
     }
 
-    return response.json(['Usuário autorizado'])
+    return response.json(users[userIndex])
 })
 
 
 app.post('/cadastrar', (request, response) => {
-    const {CPF, senha} = request.body
-
-    const user = { id: uuid(), CPF, senha }
+    const {nome, sobrenome, CPF, email, senha} = request.body
+    
+    const user = { id: uuid(),nome, sobrenome, CPF, email, senha }
 
     users.push(user)
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="store.state.user.logado">
     <div class="header-items">
       <div class="header-items-icons">
         <div class="icon icon-perfil">
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div >
-        <h2 class="hi">Olá, {{userName}}</h2>
+        <h2 class="hi">Olá, {{store.state.user.nome}}</h2>
         
       </div>
     </div>
@@ -148,22 +148,36 @@
       </div>
     </div>
   </div>
+  <div class="container" v-else>
+    <div class="container-nao-logado">
+      <div>
+        <h1 class="container-nao-logado-h1">Faça seu login</h1>
+        <LinkStyled path="/" text="Click aqui para fazer o login" textColor="purple"/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
-
+import store from '../store'
+import { LinkStyled } from '../components/atoms'
 
 export default defineComponent({
   name: "Home",
   data(){
     return {
-      userName: 'Jabes', // virá do localStorage
       valueAccount: '20.000,00',
       creditToPay: '500,00',
-      availableLimit: '4.000,00'
+      availableLimit: '4.000,00',
+      name: '',
+      store
     }
+  },
+  components: {
+    LinkStyled
   }
+
 
 });
 </script>
@@ -300,4 +314,18 @@ export default defineComponent({
   
 }
 
+/* =============== container-nao-logado =================== */
+.container-nao-logado {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container-nao-logado-h1 {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
 </style>
+

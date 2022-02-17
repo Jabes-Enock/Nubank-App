@@ -2,9 +2,9 @@
     <div class="login-data">
         <h1>Faça seu login</h1>
         <form class="login-data-form">
-            <InputItem textType="number" placeholderData="CPF" />
-            <InputItem textType="password" placeholderData="Senha"/>
-            <ButtonStyled text="Entrar" bgColor="primary-color" textColor="white"/>
+            <input v-model="form.CPF" class="login-data-form-input" type="number" placeholder="CPF">
+            <input v-model="form.senha" class="login-data-form-input" type="password" placeholder="Senha">
+            <ButtonStyled @click="verifyUser" text="Entrar" bgColor="primary-color" textColor="white" typeText="submit"/>
             <div class="login-data-link-to-cadastro">
                 <LinkStyled  path="/cadastro" textColor="purple" text="Cadastrar Usuário"/>
             </div>
@@ -14,15 +14,29 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { InputItem, ButtonStyled, LinkStyled } from '../atoms'
-
+import { ButtonStyled, LinkStyled } from '../atoms'
+import store from '../../store'
 
 export default defineComponent({
+
+    data(){
+        return {
+            form: {
+                CPF: '',
+                senha: ''
+            }
+        }
+    },
     components: {
-        InputItem,
         ButtonStyled,
         LinkStyled
     },
+
+    methods: {
+        verifyUser(){
+            store.dispatch('verifyUser', this.form)    
+        }
+    }
 
 })
 </script>
@@ -45,6 +59,21 @@ export default defineComponent({
 .login-data-form {
     max-width: 100%;
     text-align: center;
+}
+
+.login-data-form-input {
+    width: 100%;
+    border: 1px solid var(--bg-gray);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-data-form-input:focus {
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 5px 0 var(--color-primary) ;
 }
 
 .login-data-link-to-cadastro {
