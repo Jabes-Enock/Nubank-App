@@ -1,5 +1,5 @@
 <template>
-    <button @click.prevent="$emit('click')" :class="['button-styled', bgColor, textColor]" :type="typeText">
+    <button @click.prevent="$emit('eventClick')" :class="['button-styled', bgColor, textColor]" :type="typeText">
         {{text}}
     </button>
 </template>

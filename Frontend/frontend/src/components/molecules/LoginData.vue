@@ -2,9 +2,9 @@
     <div class="login-data">
         <h1>Faça seu login</h1>
         <form class="login-data-form">
-            <input v-model="form.CPF" class="login-data-form-input" type="number" placeholder="CPF">
-            <input v-model="form.senha" class="login-data-form-input" type="password" placeholder="Senha">
-            <ButtonStyled @click="verifyUser" text="Entrar" bgColor="primary-color" textColor="white" typeText="submit"/>
+            <input v-model="form.CPF" class="login-data-form-input" type="number" placeholder="CPF" required>
+            <input v-model="form.senha" class="login-data-form-input" type="password" placeholder="Senha" required>
+            <ButtonStyled @eventClick="verifyUser" text="Entrar" bgColor="primary-color" textColor="white" typeText="submit"/>
             <div class="login-data-link-to-cadastro">
                 <LinkStyled  path="/cadastro" textColor="purple" text="Cadastrar Usuário"/>
             </div>

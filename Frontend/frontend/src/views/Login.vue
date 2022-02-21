@@ -1,20 +1,47 @@
 <template>
-    <div>
+    <div class="container">
         <LoginCardDone />
+        <AlertCard @changePopupState="changePopupState" v-if="store.state.popups.popupLogin" statusMessage="Oooops!!!!" explicationMessage="Usuário ou senha inválido ou ainda usuário não cadastrado"> 
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="rgb(132, 9, 204)">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+        </AlertCard>
     </div>
 </template>
-
+ 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import {LoginCardDone } from '../components/template'
+import { AlertCard } from '../components/molecules'
+import store from '../store'
 
 export default defineComponent({
+    data(){
+        return { store}
+    },
+
    components: {
-       LoginCardDone
+       LoginCardDone,
+       AlertCard
+   },
+   
+   methods: {
+       changePopupState() {
+           store.commit('CLOSE_POPUP')
+       }
    }
 })
 </script>
 
 <style scoped>
-
+    .icon {
+        width: 50px;
+        height: 50px;
+        border: 3px solid var(--color-primary);
+        margin: 0 auto;
+        border-radius: 50%;
+        padding:0.3rem
+    }
 </style>
