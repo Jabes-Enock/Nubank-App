@@ -2,7 +2,7 @@
   <div class="container" v-if="store.state.user.logado">
     <div class="header-items">
       <div class="header-items-icons">
-        <div class="icon icon-perfil">
+        <div class="icon icon-perfil" @click="showMenu = true" cursor-pointer>
           <svg xmlns="http://www.w3.org/2000/svg" class="fill-svg" viewBox="0 0 24 24" >
             <path stroke-linecap="round" stroke-linejoin="round"  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div >
-        <h2 class="hi">Olá, {{store.state.user.nome}}</h2>
+        <h2 class="hi">Olá, {{$name}}</h2>
         
       </div>
     </div>
@@ -147,6 +147,9 @@
         <div><p>Limite disponível: <span>{{availableLimit}}</span></p></div>
       </div>
     </div>
+    <transition>
+      <Menu @closeMenu="showMenu = false" v-if="showMenu" :name="$name"/>
+    </transition>
   </div>
   <div class="container" v-else>
     <div class="container-nao-logado">
@@ -156,12 +159,15 @@
       </div>
     </div>
   </div>
+
+  
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
 import store from '../store'
 import { LinkStyled } from '../components/atoms'
+import { Menu } from '../components/template'
 
 export default defineComponent({
   name: "Home",
@@ -171,11 +177,18 @@ export default defineComponent({
       creditToPay: '500,00',
       availableLimit: '4.000,00',
       name: '',
-      store
+      store,
+      showMenu: false
     }
   },
   components: {
-    LinkStyled
+    LinkStyled,
+    Menu
+  },
+  computed: {
+    $name(){
+      return store.getters.$name
+    }
   }
 
 
@@ -326,6 +339,16 @@ export default defineComponent({
   color: var(--color-primary);
   font-size: 2rem;
 }
+
+.v-enter-from,
+.v-leave-to {
+    top: 100%;
+}
+.v-enter-active,
+.v-leave-active {
+    transition: 0.25s ease-out;
+}
+
 
 </style>
 

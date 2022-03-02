@@ -26,6 +26,7 @@ app.get('/users', (request, response) => {
 
 app.post('/users', (request, response) => {
     const { CPF, senha } = request.body
+
     const userIndex = users.findIndex( user => user.CPF === CPF && user.senha === senha)
 
     if(userIndex < 0) {
@@ -52,7 +53,21 @@ app.post('/cadastrar', (request, response) => {
     return response.json('Houve algum problema ao cadastrar o usuário')
     
 })
-app.put('/users', (request, response) => {})
+app.put('/users', (request, response) => {
+    const { CPF, email, senha } = request.body 
+
+    const userIndex = users.findIndex( user => user.CPF === CPF  && user.senha === senha )
+
+    if(userIndex < 0) {
+        return response.json(['Houve um problema ao atualizar o usuário'])
+    }
+
+    users[userIndex].email = email
+
+    return response.json(users[userIndex])
+})
+
+
 app.delete('/users', (request, response) => {})
 
 app.listen('3333', () => console.log('Started with successfully'))

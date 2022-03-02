@@ -51,4 +51,9 @@ export default createStore({
       }
     }
   },
+  getters: {
+    $name(state){
+      return state.user.nome
+    }
+  }
 })
