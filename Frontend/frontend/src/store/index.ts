@@ -14,6 +14,7 @@ export default createStore({
     popups: {
       popupLogin: false,
       popupCadastro: false,
+      popupMeusDados: false
     }
       
     
@@ -36,6 +37,10 @@ export default createStore({
     },
     CLOSE_POPUP_CADASTRO(state) {
       state.popups.popupCadastro = false
+      router.push('/')
+    },
+    CLOSE_POPUP_MEUS_DADOS(state) {
+      state.popups.popupMeusDados = false
     },
   },
   actions: {

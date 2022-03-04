@@ -51,7 +51,6 @@ export default defineComponent({
                 }
                 else {
                     store.state.popups.popupCadastro = true
-
                     this.form.nome = ''
                     this.form.sobrenome = ''
                     this.form.CPF = ''

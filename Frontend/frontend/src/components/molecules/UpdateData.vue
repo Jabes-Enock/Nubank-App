@@ -53,7 +53,7 @@ export default defineComponent({
                         alert('Houve um problema ao atualizar o usuário')
                     }
                     else {
-                        //store.state.popups.popupCadastro = true
+                        store.state.popups.popupMeusDados = true
                         this.form.CPF = ''
                         this.form.email = ''
                         this.form.confirm = ''

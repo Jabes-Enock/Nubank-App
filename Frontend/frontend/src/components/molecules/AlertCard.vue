@@ -1,5 +1,7 @@
 <template>
-    <div class="container" @click="$emit('changePopupState')">
+    <div class="container">
+        <div class="container" @click="$emit('changePopupState')">
+        </div>
         <div class="popup">
             <div>
                <slot /> 
@@ -9,7 +11,6 @@
             <p class="popup-p">{{explicationMessage}}</p>
             <ButtonStyled @eventClick="$emit('changePopupState')" text="Ok" bgColor="primary-color" textColor="white" typeText="button"/>
         </div>
-        
     </div>
 </template>
 
@@ -46,7 +47,8 @@ export default defineComponent({
         place-items: center;
         position: fixed;
         top: 0;
-        left: 0
+        left: 0;
+        z-index: 0;
     }
 
     .popup {
@@ -56,21 +58,21 @@ export default defineComponent({
         text-align: center;
         padding: 2rem;
         border-radius: 10px;
+        z-index: 10;
+        margin-bottom: 2rem;
     }
 
     .popup-h2 {
         margin: 1.5rem 0;
         letter-spacing: 1px;
-        font-weight: bold;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: var(--color-primary);
     }
 
     .popup-p {
         margin: 1.5rem 0;
         letter-spacing: 1px;
-        font-weight: bold;
-        font-family: monospace;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color: gray;
         font-size: 1rem;
     }

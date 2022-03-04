@@ -20,6 +20,18 @@ export default defineComponent({
 
 
 @media only screen and (max-width: 500px){
+.v-enter-from {
+    transform: translateX(100%);
+}
+
+.v-enter-active {
+    transition: 0.25s ease-out;
+}
+
+
+} 
+
+@media only screen and (min-width: 800px){
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
@@ -27,7 +39,7 @@ export default defineComponent({
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.25s ease;
+  transition: opacity 0.1s ease;
 }
-}
+} 
 </style>
