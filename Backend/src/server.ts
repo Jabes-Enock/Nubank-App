@@ -11,7 +11,7 @@ interface UserData {
     id: string
     nome: string
     sobrenome: string
-    CPF: number
+    CPF: string
     email: string
     senha: string
 }
@@ -53,6 +53,8 @@ app.post('/cadastrar', (request, response) => {
     return response.json('Houve algum problema ao cadastrar o usuário')
     
 })
+
+
 app.put('/users', (request, response) => {
     const { CPF, email, senha } = request.body 
 
@@ -68,6 +70,19 @@ app.put('/users', (request, response) => {
 })
 
 
-app.delete('/users', (request, response) => {})
+app.delete('/users/:CPF', (request, response) => {
+
+    const { CPF } = request.params
+
+    const userIndex = users.findIndex( user => user.CPF == CPF)
+
+    if( userIndex < 0) {
+        return response.json('Erro ao excluir usuário')
+    }
+
+    users.splice( userIndex, 1)
+
+    return response.json('Usuário excluído com sucesso')
+})
 
 app.listen('3333', () => console.log('Started with successfully'))

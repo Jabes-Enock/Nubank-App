@@ -44,20 +44,25 @@ export default defineComponent({
                 alert('Preencha todos os campos')
             }
             else {
-                const { data } = await axios.post('/cadastrar', this.form)
+                try {
+                    const { data } = await axios.post('/cadastrar', this.form)
 
-                if(data == 'Houve algum problema ao cadastrar o usuário') {
+                    if(data == 'Houve algum problema ao cadastrar o usuário') {
                     alert('Houve algum problema ao cadastrar o usuário')
-                }
-                else {
+                    }
+                    else {
                     store.state.popups.popupCadastro = true
                     this.form.nome = ''
                     this.form.sobrenome = ''
                     this.form.CPF = ''
                     this.form.email = ''
                     this.form.senha =  ''                    
-                }
+                    }
 
+                } catch (error) {
+                    console.warn(error.message)
+                }
+                
             }
         },
     }

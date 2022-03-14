@@ -38,11 +38,11 @@ export default defineComponent({
 .login-data-inputs {
     max-width: 100%;
     background: var(--color-second);
-    border-top-left-radius: 10rem;
-    border-bottom-right-radius: 10rem;
+    border-top-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 500px) {
     .login-data-inputs {
         border-radius: 0.7rem;
     }

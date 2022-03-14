@@ -1,5 +1,12 @@
 <template>
     <div class="cadastro-data">
+        <div class="cadastro-data-message-chevron">
+                <router-link to="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30px" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </router-link>
+        </div>
         <div class="cadastro-data-logo-nubank">
           <Logo />  
         </div>
@@ -28,24 +35,22 @@ export default defineComponent({
     width: 100%;
     max-width: 400px;
 }
-
+.cadastro-data-message-chevron {
+    margin: 1rem 0.3rem;
+}
 .cadastro-data-logo-nubank {
     max-width: 120px;
-    margin: 3rem auto;
+    margin: 1rem auto 3rem;
 }
 
 .cadastro-data-inputs {
     width: 100%;
     background: var(--color-second);
     padding: 4rem 0;
-    border-top-left-radius: 10rem;
+    border-radius: 0.7rem;
     margin: auto;
+    margin-bottom: 2rem;
 }
 
-@media only screen and (min-width: 700px) {
-    .cadastro-data-inputs {
-        border-radius: 0.7rem;
-    }
-}
 
 </style>

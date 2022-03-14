@@ -2,8 +2,9 @@
     <div class="update-data">
         <h1>Atualize seu e-mail</h1>
         <form class="update-data-form">
-            
-            <input v-model="form.CPF" class="update-data-form-input" type="number" placeholder="CPF: xxxxxxxxxxx" required>
+            <h2 class="update-data-form-h2">Seu email atual</h2>
+            <h4 class="update-data-form-h4">{{$getEmail}}</h4>
+
             <input v-model="form.email" class="update-data-form-input" type="text" placeholder="novo email: novo@email.com" required>
             <input v-model="form.confirm" class="update-data-form-input" type="text" placeholder="Confirme Email: novo@email.com" required>
             <input v-model="form.senha" class="update-data-form-input" type="password" placeholder="Senha: **********" required>
@@ -25,10 +26,10 @@ export default defineComponent({
     data(){
         return {
             form: {
-                CPF:'',
                 email:'',
                 confirm:'',
-                senha: ''
+                senha: '',
+                CPF: store.getters.$getCPF
             }
         }
     },
@@ -36,9 +37,15 @@ export default defineComponent({
         ButtonStyled
     },
 
+    computed: {
+        $getEmail(): string{
+            return store.getters.$getEmail
+        },
+    },
+
     methods: {
         async UpdateUser() {
-            if(this.form.CPF == '' || this.form.email == '' || this.form.confirm == '' || this.form.senha == '') {
+            if(this.form.email == '' || this.form.confirm == '' || this.form.senha == '') {
                 alert('Preencha todos os campos')
             }
             else {
@@ -53,8 +60,8 @@ export default defineComponent({
                         alert('Houve um problema ao atualizar o usuário')
                     }
                     else {
+                        store.commit('VERIFY_USER', data)
                         store.state.popups.popupMeusDados = true
-                        this.form.CPF = ''
                         this.form.email = ''
                         this.form.confirm = ''
                         this.form.senha =  ''                    
@@ -79,13 +86,22 @@ export default defineComponent({
 .update-data h1
  {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-weight: lighter;
 }
 
 .update-data-form {
     width: 100%;
     text-align: center;
+}
+
+.update-data-form-h2 {
+    font-weight: lighter;
+}
+
+.update-data-form-h4 {
+    margin-bottom: 2rem;
+    color: var(--color-primary)
 }
 
 .update-data-form-input {

@@ -24,7 +24,7 @@
         <div class="meus-dados-section">
           <UpdateData />  
         </div>
-        <AlertCard @changePopupState="changePopupState" statusMessage="Atualizado com sucesso!!" explicationMessage="Seu email foi alterado" v-if="store.state.popups.popupMeusDados">
+        <AlertCard @changePopupState="changePopupState" statusMessage="Atualizado com sucesso!!" explicationMessage="Seu email foi alterado" v-if="$openPopupMeusDados">
             <svg xmlns="http://www.w3.org/2000/svg" width="100" fill="none" viewBox="0 0 24 24" stroke="gray" stroke-width="1">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
             </svg>
@@ -56,6 +56,12 @@ export default defineComponent({
        changePopupState() {
            store.commit('CLOSE_POPUP_MEUS_DADOS')
        }
+   },
+
+   computed: {
+       $openPopupMeusDados(){
+           return store.getters.$openPopupMeusDados
+       }
    }
 
 })
@@ -83,7 +89,7 @@ export default defineComponent({
 .meus-dados-message-logo {
     width: 50%;
     max-width: 200px;
-    margin: 5rem 0 10rem;
+    margin: 2rem 0 7rem;
 }
 
 .custom-shape-divider-bottom-1646260020 {

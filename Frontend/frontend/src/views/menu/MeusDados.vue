@@ -20,7 +20,7 @@ export default defineComponent({
 
 <style scoped>
     
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 800px){
 .v-enter-from,
 .v-leave-to {
     transform: translateX(100%);
@@ -30,7 +30,7 @@ export default defineComponent({
 }
 
 .v-leave-active {
-    transition: 0.25s ease-out;
+    transition: ease-out;
 }
 }
 </style>

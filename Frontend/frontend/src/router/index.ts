@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Login from '../views/Login.vue'
 import Cadastro from '../views/Cadastro.vue'
+import DeleteAccount from '../views/DeleteAccount.vue'
 import MeusDados from '../views/menu/MeusDados.vue'
 import ExemploDeRota from '../views/menu/ExemploDeRota.vue'
 
@@ -26,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/cadastro',
     name: 'Cadastro',
     component: Cadastro,
+  },
+  {
+    path: '/Deletar minha conta',
+    name: 'DeleteAccount',
+    component: DeleteAccount,
   },
   {
     path: '/meus dados',

@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-type bgColor = 'primary-color' | 'gray-color'
+type bgColor = 'primary-color' | 'gray-color' | 'white-color'
 type textColor = 'Black' | 'white' | 'purple'
 
 export default defineComponent({
@@ -24,7 +24,7 @@ export default defineComponent({
             type: String,
             default: 'primary-color',
             validator: (value: bgColor) => {
-                return ['primary-color', 'gray-color'].includes(value)
+                return ['primary-color', 'gray-color', 'white-color'].includes(value)
             }
         },
         textColor: {
@@ -62,6 +62,10 @@ export default defineComponent({
 
 .gray-color {
     background: var(--bg-gray);
+}
+
+.white-color {
+    background: white;
 }
 
 .black {
