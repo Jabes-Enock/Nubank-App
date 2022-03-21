@@ -4,7 +4,7 @@
 <p>
 Before we start, you can see below a gif of this application running.</p>
 
-<div style="display: grid; place-items: center; background: rgb(250, 250, 245); width: 100%">
+<div style="display: grid; place-items: center; background: rgb(250, 250, 245); width: 100%; text-align: center;">
     <img style="width: 250px;" alt="Gif do app" src="https://github.com/Jabes-Enock/Nubank-App/blob/a73317c18818a77edbfd3b5b308e09fd7f0bade4/Images/Nubank%20App%20Running.gif" />
 </div><br><br>
 
