@@ -65,7 +65,7 @@ users.splice( userIndex, 1)
 <div id="Dependencies_used">
 <h4 style="color: rgb(132, 9, 204)"> Dependencies used </h4>
 <br>
-<img style="width: 100%;" alt.="Imagem" title="Imagem teste" src="./images/Backend dependecies.svg" /><br><br><br>
+<img style="width: 100%;" alt.="Imagem" title="Imagem teste" src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Backend%20dependecies.svg" /><br><br><br>
 
 - **Express:** To create the server, the framework Node.js Express was used.
   <br>
@@ -113,7 +113,7 @@ export default axios.create({
 <div id="Dependencies_used_frontend">
 <h4 style="color: rgb(132, 9, 204)"> Dependencies used </h4>
 <br>
-<img style="width: 100%;" alt.="Imagem" title="Imagem teste" src="./images/Frontend dependecies.svg" />
+<img style="width: 100%;" alt.="Imagem" title="Imagem teste" src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Frontend%20dependecies.svg" />
 <br><br><br>
 
 - **Vue.js:** To build the entire application framework.
@@ -138,16 +138,16 @@ export default axios.create({
 
 <div style="display: flex; max-width: 100vw; overflow-x: scroll; padding: 0.5rem; background: rgb(220, 220, 220)">
 
-<img style="max-width: 130px; margin-right: 1rem" alt="Login"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/login.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Login popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/login%20popup.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Cadastrar"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Cadastrar.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Cadastrar popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Cadastrar%20popup.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Home"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Home.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Menu"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/menu.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Atualizar email"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Atualizar%20email.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Atualizar email popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Atualizar%20email%20popup.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Deletar"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Deletar.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Deletar popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Deletar%20popup.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Login"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/login.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Login popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/login%20popup.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Cadastrar"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Cadastrar.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Cadastrar popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Cadastrar%20popup.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Home"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Home.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Menu"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/menu.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Atualizar email"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Atualizar%20email.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Atualizar email popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Atualizar%20email%20popup.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Deletar"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Deletar.png" />
+<img style="width: 130px; margin-right: 1rem" alt="Deletar popup"  src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Deletar%20popup.png" />
 </div>
 <div><br><br>
 
