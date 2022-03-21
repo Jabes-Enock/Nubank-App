@@ -85,4 +85,4 @@ app.delete('/users/:CPF', (request, response) => {
     return response.json('Usuário excluído com sucesso')
 })
 
-app.listen('3333', () => console.log('Started with successfully'))
+app.listen('3333', () => console.log('Started successfully'))
