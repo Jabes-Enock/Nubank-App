@@ -65,15 +65,16 @@ users.splice( userIndex, 1)
 <div id="Dependencies_used">
 <h4 style="color: rgb(132, 9, 204)"> Dependencies used </h4>
 <br>
-<img style="width: 100%;" alt.="Imagem" title="Imagem teste" src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Backend%20dependecies.svg" /><br><br><br>
-
+<div style="padding: 0.5rem; background: white; width: 100vw">
+<img style="width: 100%; background: white;" alt="Imagem" title="Imagem teste" src="https://github.com/Jabes-Enock/Nubank-App/blob/master/Images/Backend%20dependecies.svg" /><br><br><br>
+</div>
 - **Express:** To create the server, the framework Node.js Express was used.
   <br>
 
 - **Cors (Cross-Origin Resource Sharing):** Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
   <br>
 
-- **Uuid (Universally Unique IDentifier):** This allows us to relax the security applied to an API. This is done by ignoring the Access-Control-Allow-Origin headers, which specify which origins can access the API.
+- **Uuid (Universally Unique IDentifier):** It's an identification number that will uniquely identify something. The idea being that id number will be universally unique.
 </div>
 
 - **Typescript:** Is a strongly typed programming language that is based on JavaScript.
