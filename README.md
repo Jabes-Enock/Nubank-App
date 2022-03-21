@@ -5,7 +5,7 @@
 Before we start, you can see below a gif of this application running.</p>
 
 <div style="display: grid; place-items: center; background: rgb(250, 250, 245)">
-    <img style="max-width: 200px; width: 100%; " alt="Gif do app" title="Imagem teste" src="./images/Nubank App Running.gif" />
+    <img style="max-width: 200px; width: 100%; " alt="Gif do app" title="Imagem teste" src="https://github.com/Jabes-Enock/Nubank-App/blob/a73317c18818a77edbfd3b5b308e09fd7f0bade4/Images/Nubank%20App%20Running.gif" />
 </div><br><br>
 
 - <a href="#Introduction">Introduction</a>
@@ -138,16 +138,15 @@ export default axios.create({
 
 <div style="display: flex; max-width: 100vw; overflow-x: scroll; padding: 0.5rem; background: rgb(220, 220, 220)">
 
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/Login.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/Login popup.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/Cadastrar.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/Cadastrar popup.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/Home.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/menu.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/Deletar.png" />
-<img style="max-width: 130px; margin-right: 1rem" alt="Imagem" title="Imagem teste" src="./images/Deletar popup.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/Login.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/Login popup.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/Cadastrar.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/Cadastrar popup.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/Home.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/menu.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/Deletar.png" />
+<img style="max-width: 130px; margin-right: 1rem" alt="Imagem"  src="./images/Deletar popup.png" />
 </div>
-
 <div><br><br>
 
 made by **Jabes Enock**
